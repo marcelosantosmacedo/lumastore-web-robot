@@ -5,7 +5,7 @@
 - Descrição: Testes automatizados utilizando a plataforma LUMA como exemplo
 
 Tecnologias:
-- Framework utilizado: ROBOTFRAMEWORK ()
+- Framework utilizado: ROBOTFRAMEWORK (https://robotframework.org/?tab=1#getting-started)
 - Selenium Library
 
 Instrução de Instalação:
