@@ -1,2 +1,4 @@
-logs/
-results/
+*.log
+*.png
+*.html
+*.xml
