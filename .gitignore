@@ -1,4 +1,2 @@
-*selenium-screenshot
-*output.log
-*report.html
-*log.html
+logs/
+results/
