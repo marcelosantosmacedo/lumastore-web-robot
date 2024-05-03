@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on darwin)" generated="20240503 12:20:57.137" rpa="false" schemaversion="4">
+<suite id="s1" name="Luma Adicional" source="/Users/marcelosantosmacedo/Documents/GitHub/lumastore-web-robot/tests/luma_adicional.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Buscar por `shirt` no menu superior e clicar no último resultado sugerido" line="15">
+<kw name="Abrir o navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240503 12:20:58.193" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20240503 12:20:58.192" endtime="20240503 12:21:04.438"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240503 12:21:04.439" endtime="20240503 12:21:04.851"/>
+</kw>
+<status status="PASS" starttime="20240503 12:20:58.192" endtime="20240503 12:21:04.851"/>
+</kw>
+<kw name="Acessar a home page do site Luma" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240503 12:21:04.854" level="INFO">Opening url 'https://magento.softwaretestingboard.com/'</msg>
+<status status="PASS" starttime="20240503 12:21:04.853" endtime="20240503 12:21:08.741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${HEADER_HOME_TEXT}</arg>
+<arg>timeout=5000</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240503 12:21:08.741" endtime="20240503 12:21:08.792"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:04.852" endtime="20240503 12:21:08.792"/>
+</kw>
+<kw name="Digitar o nome do Produto &quot;shirt&quot; no campo de Pesquisa" library="search" sourcename="Digitar o nome do Produto &quot;${PRODUTO}&quot; no campo de Pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@id,'search')]</arg>
+<arg>text=${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:08.795" level="INFO">Typing text 'shirt' into text field '//input[contains(@id,'search')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:08.793" endtime="20240503 12:21:09.652"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:08.793" endtime="20240503 12:21:09.652"/>
+</kw>
+<kw name="Clicar no botão de Pesquisa" library="search">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${BTN_SUBMIT_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:09.653" level="INFO">Clicking element '//button[@type='submit'][contains(.,'Search')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:09.653" endtime="20240503 12:21:11.989"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:09.652" endtime="20240503 12:21:11.989"/>
+</kw>
+<kw name="Verificar se o termo &quot;shirt&quot; informado foi utilizado na Pesquisa" library="search" sourcename="Verificar se o termo &quot;${PRODUTO}&quot; informado foi utilizado na Pesquisa">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=Search results for: '${PRODUTO}'</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240503 12:21:11.990" endtime="20240503 12:21:12.150"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:11.990" endtime="20240503 12:21:12.168"/>
+</kw>
+<kw name="Clicar no último produto disponível no retorno da Busca" library="search">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${LAST_PRODUCT_SEARCH_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:12.185" level="INFO">Clicking element '//img[contains(@alt,'Proteus Fitness Jackshirt')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:12.175" endtime="20240503 12:21:14.155"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:12.170" endtime="20240503 12:21:14.155"/>
+</kw>
+<kw name="Verificar o direcionamento para a Página do Produto" library="search">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${PRODUCT_NAME}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240503 12:21:14.156" endtime="20240503 12:21:14.190"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:14.155" endtime="20240503 12:21:14.190"/>
+</kw>
+<kw name="Fechar o navegador" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240503 12:21:14.703" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240503 12:21:14.191" endtime="20240503 12:21:14.703"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240503 12:21:14.703" endtime="20240503 12:21:15.232"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:14.190" endtime="20240503 12:21:15.232"/>
+</kw>
+<doc>Esse teste verifica o comportamento da aplicação ao efetuar uma busca</doc>
+<tag>Busca</tag>
+<status status="PASS" starttime="20240503 12:20:58.191" endtime="20240503 12:21:15.232"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02 - Criar uma conta na tela de Login/Cadastro" line="27">
+<kw name="Abrir o navegador" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240503 12:21:15.241" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20240503 12:21:15.236" endtime="20240503 12:21:17.716"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240503 12:21:17.716" endtime="20240503 12:21:18.150"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:15.235" endtime="20240503 12:21:18.150"/>
+</kw>
+<kw name="Acessar a home page do site Luma" library="base">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240503 12:21:18.151" level="INFO">Opening url 'https://magento.softwaretestingboard.com/'</msg>
+<status status="PASS" starttime="20240503 12:21:18.151" endtime="20240503 12:21:19.266"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${HEADER_HOME_TEXT}</arg>
+<arg>timeout=5000</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240503 12:21:19.267" endtime="20240503 12:21:21.530"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:18.150" endtime="20240503 12:21:21.530"/>
+</kw>
+<kw name="Clicar na opção Create an Account da Home" library="home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=(//a[contains(.,'Create an Account')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:21.531" level="INFO">Clicking element '(//a[contains(.,'Create an Account')])[1]'.</msg>
+<status status="PASS" starttime="20240503 12:21:21.531" endtime="20240503 12:21:23.317"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${REGISTER_PAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240503 12:21:23.317" endtime="20240503 12:21:23.337"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:21.531" endtime="20240503 12:21:23.337"/>
+</kw>
+<kw name="Informar Nome" library="register">
+<kw name="First Name" library="FakerLibrary">
+<var>${nome}</var>
+<msg timestamp="20240503 12:21:23.341" level="INFO">${nome} = Nina</msg>
+<status status="PASS" starttime="20240503 12:21:23.339" endtime="20240503 12:21:23.341"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${FIRST_NAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:23.343" level="INFO">Typing text 'Nina' into text field '//input[contains(@name,'firstname')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:23.342" endtime="20240503 12:21:23.760"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:23.338" endtime="20240503 12:21:23.760"/>
+</kw>
+<kw name="Informar Sobrenome" library="register">
+<kw name="Last Name" library="FakerLibrary">
+<var>${sobrenome}</var>
+<msg timestamp="20240503 12:21:23.761" level="INFO">${sobrenome} = Jesus</msg>
+<status status="PASS" starttime="20240503 12:21:23.760" endtime="20240503 12:21:23.761"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${LAST_NAME}</arg>
+<arg>text=${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:23.761" level="INFO">Typing text 'Jesus' into text field '//input[contains(@name,'lastname')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:23.761" endtime="20240503 12:21:23.871"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:23.760" endtime="20240503 12:21:23.871"/>
+</kw>
+<kw name="Informar E-mail" library="register">
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20240503 12:21:23.872" level="INFO">${email} = cda-mata@example.com</msg>
+<status status="PASS" starttime="20240503 12:21:23.872" endtime="20240503 12:21:23.872"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${EMAIL_FIELD}</arg>
+<arg>text=${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:23.873" level="INFO">Typing text 'cda-mata@example.com' into text field '//input[contains(@id,'email_address')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:23.872" endtime="20240503 12:21:24.064"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:23.871" endtime="20240503 12:21:24.064"/>
+</kw>
+<kw name="Informar Senha e Confirmar Senha" library="register">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${PASSWORD}</arg>
+<arg>text=teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:24.065" level="INFO">Typing text 'teste@123' into text field '//input[@title='Password']'.</msg>
+<status status="PASS" starttime="20240503 12:21:24.064" endtime="20240503 12:21:24.236"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=${PASSWORD_CONFIRMATION}</arg>
+<arg>text=teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:24.237" level="INFO">Typing text 'teste@123' into text field '//input[contains(@name,'password_confirmation')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:24.236" endtime="20240503 12:21:24.382"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:24.064" endtime="20240503 12:21:24.382"/>
+</kw>
+<kw name="Clicar no botão Create and Account" library="register">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${REGISTER_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240503 12:21:24.383" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Create an Account')]'.</msg>
+<status status="PASS" starttime="20240503 12:21:24.382" endtime="20240503 12:21:28.589"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:24.382" endtime="20240503 12:21:28.589"/>
+</kw>
+<kw name="Verificar se a conta foi criada com sucesso" library="register">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${REGISTER_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240503 12:21:28.590" endtime="20240503 12:21:28.649"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:28.590" endtime="20240503 12:21:28.649"/>
+</kw>
+<kw name="Fechar o navegador" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240503 12:21:29.007" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240503 12:21:28.650" endtime="20240503 12:21:29.007"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240503 12:21:29.008" endtime="20240503 12:21:29.469"/>
+</kw>
+<status status="PASS" starttime="20240503 12:21:28.649" endtime="20240503 12:21:29.469"/>
+</kw>
+<doc>Esse teste verifica o comportamento da aplicação ao criar uma nova conta de usuário</doc>
+<tag>Cadastro</tag>
+<status status="PASS" starttime="20240503 12:21:15.234" endtime="20240503 12:21:29.470"/>
+</test>
+<doc>Essa suíte trata-se de testes adicionais do desafio proposto</doc>
+<status status="PASS" starttime="20240503 12:20:57.138" endtime="20240503 12:21:29.472"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Busca</stat>
+<stat pass="1" fail="0" skip="0">Cadastro</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Luma Adicional">Luma Adicional</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

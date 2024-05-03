@@ -7,23 +7,14 @@ Test Teardown    Fechar o navegador
 
 *** Test Cases ***
 
-Caso de Teste 01 - Efetuar Login sem sucesso na plataforma LUMA
-    [Documentation]    Esse teste verifica o comportamento da aplicação ao informar um usuário inválido
-    [Tags]             Login
-    Acessar a home page do site Luma
-    Clicar na opção Sign In
-    Informar um e-mail e senha não cadastrado na plataforma
-    Clicar no botão Sign In
-    Verificar se está apresentando a mensagem de erro ao tentar logar
-
-
-Caso de Teste 02 - Acessar a Home Page do site Luma
+#OBRIGATORIO 1
+Caso de Teste 01 - Acessar a Home Page do site Luma
     [Documentation]    Esse teste verifica o carregamento da Home do site
     [Tags]             Home
     Acessar a home page do site Luma
 
-
-Caso de Teste 03 - Efetuar uma busca pelo produto
+#OBRIGATORIO 2
+Caso de Teste 02 - Efetuar uma busca pelo produto
     [Documentation]    Esse teste verifica o comportamento da busca no site
     [Tags]             Busca
     Acessar a home page do site Luma
@@ -31,8 +22,8 @@ Caso de Teste 03 - Efetuar uma busca pelo produto
     Clicar no botão de Pesquisa
     Verificar se o termo "SHIRT" informado foi utilizado na Pesquisa
 
-
-Caso de Teste 04 - Adicionar um produto ao carrinho
+#OBRIGATORIO 3
+Caso de Teste 03 - Adicionar um produto ao carrinho
     [Documentation]    Esse teste verifica a adição de produto ao carrinho
     [Tags]             Carrinho
     Acessar a home page do site Luma
@@ -44,5 +35,8 @@ Caso de Teste 04 - Adicionar um produto ao carrinho
     Selecionar a Cor
     Clicar no botão Add To Cart
     Verificar se o produto foi adicionado ao carrinho
+
+#OBRIGATORIO 4
+#Caso de Teste 04 - Realizar checkout
 
     
