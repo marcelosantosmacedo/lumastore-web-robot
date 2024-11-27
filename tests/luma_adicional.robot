@@ -1,7 +1,7 @@
 *** Settings ***
 
 Documentation    Essa suíte trata-se de testes adicionais do desafio proposto
-Resource         ../resources/base.robot    
+Resource         ../resources/base.resource    
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 

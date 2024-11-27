@@ -1,7 +1,7 @@
 *** Settings ***
 
 Documentation    Essa suítes efetua testes na funcionalidade de login da plataforma Luma
-Resource         ../resources/base.robot
+Resource         ../resources/base.resource
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
